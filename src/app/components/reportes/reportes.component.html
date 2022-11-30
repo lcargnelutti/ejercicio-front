@@ -1,0 +1,74 @@
+<body>
+
+  <!-- Form que contiene el datePicker y el boton para enviar la solicitud -->
+<form class="wrapperSuperior">
+  <div class="datePicker">
+    <label>
+      Ingrese la fecha del reporte a buscar:
+      <input
+        type="date"
+        name="FechaReporte"
+        [(ngModel)]="fechaSolicitudSinFormato">
+      <span class="validity"></span>
+    </label>
+  </div>
+  <div class="divBotonBuscar">
+    <p>
+      <button class="botonBuscar" (click)="getReportes()">Buscar reporte</button>
+    </p>
+  </div>
+
+</form>
+
+  <!-- Lista con los datos que todo reporte tendrá mas alla de si tiene datelles de reversiones o no-->
+<ul  *ngIf="primeraBusquedaRealizada">
+  <li>ID de la cuenta: {{reportes!.account_id}}</li>
+  <li>Fecha reversiones: {{reportes!.report_date | date: 'dd/MM/yyyy'}} </li>
+  <li>Importe total revertido: {{reportes!.total_collected| currency:'$'}}</li>
+  <li>Importe total de comisión: {{reportes!.total_gross_fee| currency:'$'}}</li>
+  <li>Importe total por acreditar: {{reportes!.total_net_amount| currency:'$'}}</li>
+</ul>
+
+<!-- Tabla con los detalles de reversiones-->
+<div class="wrapperTable">
+  <!-- Si no existen registron se oculta la tabla y se muestran el mensaje-->
+    <table *ngIf="ExistenRegistrosBusqueda" class="tablaResultados">
+        <thead>
+            <tr>
+                <th>Fecha en la que se informó el cobro</th>
+                <th>ID solicitud</th>
+                <th>Referencia externa</th>
+                <th>Nombre pagador</th>
+                <th>Descripcion</th>
+                <th>Fecha de pago</th>
+                <th>Canal</th>
+                <th>Importe pagado</th>
+                <th>Comision neta</th>
+                <th>IVA de la comision</th>
+                <th>Importe neto</th>
+                <th>Fecha en la que el saldo queda disponible</th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let datos of dataReportes">
+            <td>{{datos.informed_date | date: 'dd/MM/yyyy'}}</td>
+            <td>{{datos.request_id}}</td>
+            <td>{{datos.external_reference | externalReference}}</td>
+            <td>{{datos.payer_name}}</td>
+            <td>{{datos.description}}</td>
+            <td>{{datos.payment_date | date: 'dd/MM/yyyy'}}</td>
+            <td>{{datos.channel}}</td>
+            <td>{{datos.amount_paid | currency:'$'}}</td>
+            <td>{{datos.net_fee| currency:'$'}}</td>
+            <td>{{datos.iva_fee| currency:'$'}}</td>
+            <td>{{datos.net_amount| currency:'$'}}</td>
+            <td>{{datos.available_at | date: 'short'}}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <!-- Si es la primera busqueda, el array "data" se encuentra vacio pero no se realizó ningúna busqueda por lo que no se debe mostrar el mensaje-->
+    <p *ngIf="primeraBusquedaRealizada && !ExistenRegistrosBusqueda"> No existen registros en dicha fecha</p>
+</div>
+
+</body>
