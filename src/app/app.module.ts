@@ -11,7 +11,8 @@ import { HttpClientModule } from  '@angular/common/http';
 import {CommonModule} from '@angular/common';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { DatePipe } from '@angular/common';
-import { ExternalReferencePipe } from './pipes/external-reference.pipe'
+import { ExternalReferencePipe } from './pipes/external-reference.pipe';
+import { FooterComponent } from './components/footer/footer.component'
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { ExternalReferencePipe } from './pipes/external-reference.pipe'
     ReportesComponent,
     HomeComponent,
     ExternalReferencePipe,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
