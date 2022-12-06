@@ -12,7 +12,8 @@ import {CommonModule} from '@angular/common';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { DatePipe } from '@angular/common';
 import { ExternalReferencePipe } from './pipes/external-reference.pipe';
-import { FooterComponent } from './components/footer/footer.component'
+import { FooterComponent } from './components/footer/footer.component';
+import { LayoutComponent } from './components/layout/layout.component'
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { FooterComponent } from './components/footer/footer.component'
     HomeComponent,
     ExternalReferencePipe,
     FooterComponent,
+    LayoutComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,16 @@
+
+p{
+  background-color: rgb(95, 95, 95);
+  padding:1ch;
+  color: rgba(255, 255, 255, 0.726);
+  box-shadow: 0 50vh 0 50vh rgb(95, 95, 95);
+}
+
+@media screen and (max-width: 600px) {
+
+p{
+  background-color: rgb(95, 95, 95);
+  padding:1ch;
+  color: rgba(255, 255, 255, 0.726);
+}
+}
