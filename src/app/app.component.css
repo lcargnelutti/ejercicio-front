@@ -3,13 +3,14 @@ body{
     margin: 0px;
     padding: 50px;
     border: 0px;
-    height: 100%;
+    height: max-content;
     background-image:
         linear-gradient(158deg,rgba(72,118,189,.75),
         rgba(84,72,189,.75) 33%,
         rgba(143,72,189,.75) 66%,
         rgba(189,72,177,.75))
 }
+
 
 @media screen and (max-width: 600px) {
   body{
@@ -26,4 +27,5 @@ body{
         rgba(143,72,189,.75) 66%,
         rgba(189,72,177,.75))
 }
+
 }

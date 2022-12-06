@@ -35,34 +35,34 @@
     <table *ngIf="ExistenRegistrosBusqueda" class="tablaResultados">
         <thead>
             <tr>
-                <th>Fecha en la que se informó el cobro</th>
-                <th>ID solicitud</th>
-                <th>Referencia externa</th>
-                <th>Nombre pagador</th>
-                <th>Descripcion</th>
-                <th>Fecha de pago</th>
-                <th>Canal</th>
-                <th>Importe pagado</th>
-                <th>Comision neta</th>
-                <th>IVA de la comision</th>
-                <th>Importe neto</th>
-                <th>Fecha en la que el saldo queda disponible</th>
+                <th scope="col">Fecha en la que se informó el cobro</th>
+                <th scope="col">ID solicitud</th>
+                <th scope="col">Referencia externa</th>
+                <th scope="col">Nombre pagador</th>
+                <th scope="col">Descripcion</th>
+                <th scope="col">Fecha de pago</th>
+                <th scope="col">Canal</th>
+                <th scope="col">Importe pagado</th>
+                <th scope="col">Comision neta</th>
+                <th scope="col">IVA de la comision</th>
+                <th scope="col">Importe neto</th>
+                <th scope="col">Fecha en la que el saldo queda disponible</th>
             </tr>
         </thead>
         <tbody>
         <tr *ngFor="let datos of dataReportes">
-            <td>{{datos.informed_date | date: 'dd/MM/yyyy'}}</td>
-            <td>{{datos.request_id}}</td>
-            <td>{{datos.external_reference | externalReference}}</td>
-            <td>{{datos.payer_name}}</td>
-            <td>{{datos.description}}</td>
-            <td>{{datos.payment_date | date: 'dd/MM/yyyy'}}</td>
-            <td>{{datos.channel}}</td>
-            <td>{{datos.amount_paid | currency:'$'}}</td>
-            <td>{{datos.net_fee| currency:'$'}}</td>
-            <td>{{datos.iva_fee| currency:'$'}}</td>
-            <td>{{datos.net_amount| currency:'$'}}</td>
-            <td>{{datos.available_at | date: 'short'}}</td>
+            <td data-label="Fecha cobro">{{datos.informed_date | date: 'dd/MM/yyyy'}}</td>
+            <td data-label="ID solicitud">{{datos.request_id}}</td>
+            <td data-label="Referencia externa">{{datos.external_reference | externalReference}}</td>
+            <td data-label="Nombre pagador">{{datos.payer_name}}</td>
+            <td data-label="Descripcion">{{datos.description}}</td>
+            <td data-label="Fecha de pago">{{datos.payment_date | date: 'dd/MM/yyyy'}}</td>
+            <td data-label="Canal">{{datos.channel}}</td>
+            <td data-label="Importe pagado">{{datos.amount_paid | currency:'$'}}</td>
+            <td data-label="Comision neta">{{datos.net_fee| currency:'$'}}</td>
+            <td data-label="IVA de la comision">{{datos.iva_fee| currency:'$'}}</td>
+            <td data-label="Importe neto">{{datos.net_amount| currency:'$'}}</td>
+            <td data-label="Fecha saldo disponible">{{datos.available_at | date: 'short'}}</td>
         </tr>
         </tbody>
     </table>
