@@ -1,0 +1,42 @@
+
+body{
+  font-family: Arial,'Helvetica Neue',Helvetica,sans-serif;
+  margin: 0px;
+  padding: 50px;
+  border: 0px;
+  height: max-content;
+  background-image:
+      linear-gradient(158deg,rgba(72,118,189,.75),
+      rgba(84,72,189,.75) 33%,
+      rgba(143,72,189,.75) 66%,
+      rgba(189,72,177,.75))
+}
+
+footer{
+  background-color: rgb(95, 95, 95);
+  padding:1ch;
+  color: rgba(255, 255, 255, 0.726);
+  box-shadow: 0 50vh 0 50vh rgb(95, 95, 95);
+}
+
+@media screen and (max-width: 600px) {
+  body{
+    font-family: 'Open Sans',sans-serif;
+    margin: 0px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 0px;
+    background-image:
+        linear-gradient(158deg,rgba(72,118,189,.75),
+        rgba(84,72,189,.75) 33%,
+        rgba(143,72,189,.75) 66%,
+        rgba(189,72,177,.75))
+  }
+footer{
+  background-color: rgb(95, 95, 95);
+  padding:1ch;
+  color: rgba(255, 255, 255, 0.726);
+}
+}
